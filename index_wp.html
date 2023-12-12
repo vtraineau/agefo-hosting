@@ -1,0 +1,27 @@
+<script type="module">
+    // JavaScript code to clear the body and add a full-screen iframe
+    document.documentElement.className = '';
+    document.body.className = '';
+    var linksAndScripts = document.head.querySelectorAll('link, script, style');
+
+    // Iterate over the NodeList and remove each element
+    linksAndScripts.forEach(function (el) {
+        el.parentNode.removeChild(el);
+    });
+
+    document.body.innerHTML = ''; // Clear the body
+    document.body.style.margin = '0'
+
+
+    // Create a new iframe element
+    var iframe = document.createElement('iframe');
+
+    // Set the iframe attributes
+    iframe.style.width = '100vw';   // 100% of the viewport width
+    iframe.style.height = '100vh';  // 100% of the viewport height
+    iframe.style.border = 'none';   // No border
+    iframe.src = 'https://vtraineau.github.io/agefo-trousse-dev'; // Set the target URL
+
+    // Append the iframe to the body
+    document.body.appendChild(iframe);
+</script>
